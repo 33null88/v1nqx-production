@@ -1,0 +1,118 @@
+{
+  "meta": {
+    "title": "V1nqx Production — Motion Designer & VFX Editor in Samarkand",
+    "description": "Portfolio of V1nqx (Timur Alikulov) — Motion Designer & Video Editor in Samarkand. Specializing in After Effects, Speed Ramp, Dynamic Transitions & Automotive VFX.",
+    "og_title": "V1nqx Production — Motion Design & VFX",
+    "og_description": "High-end motion graphics, cinematic editing, and dynamic speed ramping by V1nqx (Timur Alikulov)."
+  },
+  "common": {
+    "logo_alt": "V1nqx Production Logo",
+    "scroll_top": "Scroll to top"
+  },
+  "preloader": {
+    "aria_label": "Loading page",
+    "loading": "Loading"
+  },
+  "nav": {
+    "aria_label": "Main Navigation",
+    "home": "Home",
+    "about": "About",
+    "reviews": "Reviews",
+    "works": "My Works",
+    "contact": "Contact",
+    "order": "Order now",
+    "home_aria": "V1nqx Home",
+    "logo_alt": "V1nqx Logo",
+    "telegram_aria": "V1nqx Production - Telegram Social",
+    "instagram_aria": "V1nqx Production - Instagram Social",
+    "telegram_icon_alt": "Telegram Icon",
+    "instagram_icon_alt": "Instagram Icon"
+  },
+  "hero": {
+    "description": "A professional motion designer & video editor with deep expertise in After Effects & dynamic storytelling."
+  },
+  "about": {
+    "title": "About Me",
+    "description": "High-end motion designer with recognized tournament achievements both in After Effects and Alight Motion.",
+    "recognition": {
+      "tag": "Recognition",
+      "title": "Top Editor",
+      "desc": "#1 Motion Editor in Samarkand & Official Tournament Winner"
+    },
+    "specialization": {
+      "tag": "Specialization",
+      "title": "Speed Ramp Specialist",
+      "desc": "Precision time-remapping, velocity syncing & fluid transitions"
+    },
+    "experience": {
+      "tag": "Experience",
+      "title": "Reels Creator",
+      "desc": "#9 Reels Creator in Uzbekistan, Film/Series & Automotive VFX"
+    }
+  },
+  "reviews": {
+    "tag": "Proof & Trust",
+    "title": "Reviews",
+    "subtitle": "Scroll down to explore client testimonials",
+    "card1": {
+      "badge": "Commercial Speed ramp",
+      "text": "\"Professional and highly skilled. The speed ramping and transitions in our commercial were flawless. Our engagement skyrocketed!\"",
+      "author": "Chery Showroom",
+      "role": "Marketing Director"
+    },
+    "card2": {
+      "badge": "Commercial Promo",
+      "text": "\"Pretty impressive work! The editing style is unique and engaging. Our social media reach increased significantly after the video was released.\"",
+      "author": "Kia Showroom",
+      "role": "Media Manager"
+    },
+    "card3": {
+      "badge": "Top Reels",
+      "text": "\"Good job! Especially loved the color grading and the cinematic feel. The video was a hit on our Instagram page.\"",
+      "author": "Akmal Uljaev",
+      "role": "CEO & Founder of TezPay"
+    },
+    "card4": {
+      "badge": "VFX & Motion Graphics",
+      "text": "\"10/10. The motion graphics and VFX were top-notch. The team was professional, responsive, and delivered ahead of schedule.\"",
+      "author": "Mr. Sobir",
+      "role": "Production Studio"
+    }
+  },
+  "contact": {
+    "title": "Let's Work Together",
+    "description": "Have a project in mind, need dynamic video editing, or want to discuss a custom offer? Reach out directly via social channels or drop a message!",
+    "email_label": "Email Direct",
+    "email_aria": "Email Direct"
+  },
+  "form": {
+    "title": "Send a Message",
+    "name_label": "Name / Brand",
+    "name_placeholder": "John Doe",
+    "contact_label": "Telegram / Email / Phone",
+    "contact_placeholder": "@username or email",
+    "service_label": "Service Type",
+    "service": {
+      "speed_ramp": "Speed Ramp Edit",
+      "commercial": "Commercial Video",
+      "motion": "Motion Graphics",
+      "other": "Other / Custom"
+    },
+    "details_label": "Project Details",
+    "details_placeholder": "Tell me about your vision, deadlines, and video links...",
+    "submit": "Send Message",
+    "sending": "Sending...",
+    "status": {
+      "required": "Please fill in all required fields.",
+      "success": "Message sent successfully! I will get back to you soon.",
+      "error": "Failed to send. Please contact directly via Telegram or Instagram."
+    }
+  },
+  "footer": {
+    "description": "High-end motion graphics, speed ramp edits, and commercial video production tailored to make your content stand out.",
+    "navigation": "Navigation",
+    "connect": "Connect",
+    "copyright": "© 2026 V1nqx Production. All rights reserved.",
+    "credit": "Designed & Developed by"
+  }
+}

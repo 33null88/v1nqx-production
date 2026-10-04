@@ -1,0 +1,85 @@
+{
+  "common": {
+    "logo_alt": "V1nqx Production logotipi",
+    "scroll_top": "Yuqoriga"
+  },
+  "contact": {
+    "description": "Loyihangiz bormi, dinamik montaj kerakmi yoki individual taklifni muhokama qilmoqchimisiz? Ijtimoiy tarmoqlarda yozing yoki xabar qoldiring!",
+    "email_aria": "Email orqali yozish",
+    "email_label": "Email orqali",
+    "title": "Keling, birga ishlaymiz"
+  },
+  "footer": {
+    "connect": "Bogʻlanish",
+    "copyright": "© 2026 V1nqx Production. Barcha huquqlar himoyalangan.",
+    "credit": "Dizayn va ishlab chiqish:",
+    "description": "Kontentingiz ajralib turishi uchun yuqori sifatli motion grafika, speed ramp montaj va tijorat video ishlab chiqarish.",
+    "navigation": "Navigatsiya"
+  },
+  "form": {
+    "contact_label": "Telegram / Email / Telefon",
+    "contact_placeholder": "@username yoki email",
+    "details_label": "Loyiha tafsilotlari",
+    "details_placeholder": "Gʻoyangiz, muddatlar haqida yozing va video havolalarini qoʻshing...",
+    "name_label": "Ism / Brend",
+    "name_placeholder": "Jasur Karimov",
+    "sending": "Yuborilmoqda...",
+    "service": {
+      "commercial": "Tijorat videosi",
+      "motion": "Motion grafika",
+      "other": "Boshqa / Individual",
+      "speed_ramp": "Speed Ramp montaj"
+    },
+    "service_label": "Xizmat turi",
+    "status": {
+      "error": "Yuborib boʻlmadi. Iltimos, toʻgʻridan-toʻgʻri Telegram yoki Instagram orqali bogʻlaning.",
+      "required": "Iltimos, barcha majburiy maydonlarni toʻldiring.",
+      "success": "Xabar yuborildi! Tez orada siz bilan bogʻlanaman."
+    },
+    "submit": "Xabar yuborish",
+    "title": "Xabar yuborish"
+  },
+  "lang": {
+    "switch_aria": "Til"
+  },
+  "nav": {
+    "about": "Men haqimda",
+    "aria_label": "Asosiy navigatsiya",
+    "contact": "Aloqa",
+    "home": "Bosh sahifa",
+    "home_aria": "V1nqx — bosh sahifa",
+    "instagram_aria": "V1nqx Production — Instagram",
+    "instagram_icon_alt": "Instagram belgisi",
+    "logo_alt": "V1nqx logotipi",
+    "menu_aria": "Menyu",
+    "order": "Buyurtma",
+    "reviews": "Fikrlar",
+    "telegram_aria": "V1nqx Production — Telegram",
+    "telegram_icon_alt": "Telegram belgisi",
+    "works": "Ishlarim"
+  },
+  "preloader": {
+    "aria_label": "Sahifa yuklanmoqda",
+    "loading": "Yuklanmoqda"
+  },
+  "works": {
+    "filter": {
+      "all": "Barcha ishlar",
+      "commercial": "Tijorat",
+      "speed": "Speed Ramp"
+    },
+    "filters_aria": "Ishlarni saralash",
+    "meta": {
+      "description": "V1nqx (Timur Alikulov)ning tanlangan loyihalari: motion dizayn, speed ramp va tijorat videolari.",
+      "og_description": "Dinamik video montajlar, speed ramp va yuqori sifatli motion grafikadan tanlanma.",
+      "og_title": "Ishlarim — V1nqx Production",
+      "title": "Ishlarim | V1nqx Production"
+    },
+    "next_aria": "Keyingi video",
+    "position_aria": "Video oʻrni",
+    "prev_aria": "Oldingi video",
+    "request": "Individual montaj buyurtma qilish",
+    "subtitle": "Motion dizayn, speed ramp va tijorat loyihalaridan tanlanma.",
+    "title": "Tanlangan ishlar"
+  }
+}

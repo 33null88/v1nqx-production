@@ -1,0 +1,118 @@
+{
+  "meta": {
+    "title": "V1nqx Production — Samarqanddagi motion-dizayner va vizual effektlar bo'yicha montajchi",
+    "description": "V1nqx (Timur Aliqulov) portfoliosi — Samarqanddagi motion-dizayner va video montajchi. Ixtisosligi: After Effects, Speed Ramp, dinamik o'tishlar va avtomobil videolari uchun vizual effektlar.",
+    "og_title": "V1nqx Production — motion-dizayn va vizual effektlar",
+    "og_description": "Yuqori sifatli motion grafika, kinematografik montaj va videoning dinamik tezlik o'zgarishlari — V1nqx (Timur Aliqulov) ijodi."
+  },
+  "common": {
+    "logo_alt": "V1nqx Production logotipi",
+    "scroll_top": "Sahifaning tepasiga qaytish"
+  },
+  "preloader": {
+    "aria_label": "Sahifa yuklanmoqda",
+    "loading": "Yuklanmoqda"
+  },
+  "nav": {
+    "aria_label": "Asosiy navigatsiya",
+    "home": "Bosh sahifa",
+    "about": "Men haqimda",
+    "reviews": "Sharhlar",
+    "works": "Ishlarim",
+    "contact": "Aloqa",
+    "order": "Buyurtma berish",
+    "home_aria": "V1nqx — bosh sahifaga",
+    "logo_alt": "V1nqx logotipi",
+    "telegram_aria": "V1nqx Production — Telegramda",
+    "instagram_aria": "V1nqx Production — Instagramda",
+    "telegram_icon_alt": "Telegram belgisi",
+    "instagram_icon_alt": "Instagram belgisi"
+  },
+  "hero": {
+    "description": "After Effects va dinamik hikoya qilish sohasida chuqur tajribaga ega professional motion-dizayner va video montajchi."
+  },
+  "about": {
+    "title": "Men haqimda",
+    "description": "Yuqori darajadagi motion-dizayner: After Effects va Alight Motion bo'yicha turnirlarda e'tirof etilgan yutuqlarga ega.",
+    "recognition": {
+      "tag": "E'tirof",
+      "title": "Eng yaxshi montajchi",
+      "desc": "Samarqanddagi №1 motion muharriri va rasmiy turnir g'olibi"
+    },
+    "specialization": {
+      "tag": "Ixtisoslik",
+      "title": "Speed Ramp mutaxassisi",
+      "desc": "Vaqt bilan aniq ishlash, tezlikni sinxronlash va silliq o'tishlar"
+    },
+    "experience": {
+      "tag": "Tajriba",
+      "title": "Reels yaratuvchisi",
+      "desc": "O'zbekistonda №9 Reels yaratuvchisi; kino, seriallar va avtomobil videolari uchun vizual effektlar"
+    }
+  },
+  "reviews": {
+    "tag": "Natijalar va ishonch",
+    "title": "Mijozlar fikrlari",
+    "subtitle": "Mijozlar fikrlari bilan tanishish uchun pastga aylantiring",
+    "card1": {
+      "badge": "Speed Ramp ishlatilgan reklama roligi",
+      "text": "“Ish professional va juda mahorat bilan bajarilgan. Reklama roligimizdagi Speed Ramp va o'tishlar benuqson chiqdi. Auditoriya faolligi keskin oshdi!”",
+      "author": "Chery Showroom",
+      "role": "Marketing direktori"
+    },
+    "card2": {
+      "badge": "Reklama roligi",
+      "text": "“Ish juda ta'sirli! Montaj uslubi o'ziga xos va tomoshabinni qiziqtiradi. Video chiqqanidan keyin ijtimoiy tarmoqlardagi qamrovimiz sezilarli darajada oshdi.”",
+      "author": "Kia Showroom",
+      "role": "Media menejeri"
+    },
+    "card3": {
+      "badge": "Eng yaxshi Reels",
+      "text": "“Ajoyib ish! Ayniqsa, ranglar korreksiyasi va kinematografik muhit menga juda yoqdi. Video Instagram sahifamizda ommalashdi.”",
+      "author": "Akmal Uljaev",
+      "role": "TezPay bosh direktori va asoschisi"
+    },
+    "card4": {
+      "badge": "VFX va motion grafika",
+      "text": "“10 balldan 10. Motion grafika va vizual effektlar a'lo darajada. Jamoa professional ishladi, tezkor javob berdi va loyihani muddatidan oldin topshirdi.”",
+      "author": "Sobir aka",
+      "role": "Prodyuserlik studiyasi"
+    }
+  },
+  "contact": {
+    "title": "Keling, birga ishlaymiz",
+    "description": "Loyihangiz bormi, dinamik video montaj kerakmi yoki individual taklifni muhokama qilmoqchimisiz? Ijtimoiy tarmoqlar orqali to'g'ridan-to'g'ri yozing yoki xabar qoldiring!",
+    "email_label": "Elektron pochta",
+    "email_aria": "Elektron pochtaga yozish"
+  },
+  "form": {
+    "title": "Xabar yuboring",
+    "name_label": "Ism / brend",
+    "name_placeholder": "Aziz Karimov",
+    "contact_label": "Telegram / elektron pochta / telefon",
+    "contact_placeholder": "@nikingiz yoki elektron pochta",
+    "service_label": "Xizmat turi",
+    "service": {
+      "speed_ramp": "Speed Ramp montaji",
+      "commercial": "Tijoriy video",
+      "motion": "Motion grafika",
+      "other": "Boshqa / individual"
+    },
+    "details_label": "Loyiha tafsilotlari",
+    "details_placeholder": "G'oyangiz va muddatlar haqida yozing, videolarga havolalar qoldiring...",
+    "submit": "Xabar yuborish",
+    "sending": "Yuborilmoqda...",
+    "status": {
+      "required": "Iltimos, barcha majburiy maydonlarni to'ldiring.",
+      "success": "Xabar muvaffaqiyatli yuborildi! Tez orada siz bilan bog'lanaman.",
+      "error": "Yuborib bo'lmadi. Iltimos, to'g'ridan-to'g'ri Telegram yoki Instagram orqali bog'laning."
+    }
+  },
+  "footer": {
+    "description": "Yuqori sifatli motion grafika, Speed Ramp montaji va tijoriy video ishlab chiqarish — kontentingiz ajralib turishi uchun.",
+    "navigation": "Navigatsiya",
+    "connect": "Bog'lanish",
+    "copyright": "© 2026 V1nqx Production. Barcha huquqlar himoyalangan.",
+    "credit": "Dizayn va ishlab chiqish:"
+  }
+}

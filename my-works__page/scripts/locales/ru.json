@@ -1,0 +1,85 @@
+{
+  "common": {
+    "logo_alt": "Логотип V1nqx Production",
+    "scroll_top": "Наверх"
+  },
+  "contact": {
+    "description": "Есть проект, нужен динамичный монтаж или хотите обсудить индивидуальное предложение? Напишите мне в соцсетях или оставьте сообщение!",
+    "email_aria": "Написать на почту",
+    "email_label": "Написать на почту",
+    "title": "Давайте работать вместе"
+  },
+  "footer": {
+    "connect": "Связаться",
+    "copyright": "© 2026 V1nqx Production. Все права защищены.",
+    "credit": "Дизайн и разработка:",
+    "description": "Премиальная моушн-графика, монтаж speed ramp и коммерческое видеопроизводство, которые помогут вашему контенту выделиться.",
+    "navigation": "Навигация"
+  },
+  "form": {
+    "contact_label": "Telegram / Email / Телефон",
+    "contact_placeholder": "@username или email",
+    "details_label": "Детали проекта",
+    "details_placeholder": "Расскажите о вашей идее, сроках и добавьте ссылки на видео...",
+    "name_label": "Имя / Бренд",
+    "name_placeholder": "Иван Иванов",
+    "sending": "Отправка...",
+    "service": {
+      "commercial": "Коммерческое видео",
+      "motion": "Моушн-графика",
+      "other": "Другое / Индивидуально",
+      "speed_ramp": "Монтаж Speed Ramp"
+    },
+    "service_label": "Тип услуги",
+    "status": {
+      "error": "Не удалось отправить. Свяжитесь со мной напрямую в Telegram или Instagram.",
+      "required": "Пожалуйста, заполните все обязательные поля.",
+      "success": "Сообщение отправлено! Я скоро свяжусь с вами."
+    },
+    "submit": "Отправить сообщение",
+    "title": "Отправить сообщение"
+  },
+  "lang": {
+    "switch_aria": "Язык"
+  },
+  "nav": {
+    "about": "Обо мне",
+    "aria_label": "Главная навигация",
+    "contact": "Контакты",
+    "home": "Главная",
+    "home_aria": "V1nqx — на главную",
+    "instagram_aria": "V1nqx Production — Instagram",
+    "instagram_icon_alt": "Значок Instagram",
+    "logo_alt": "Логотип V1nqx",
+    "menu_aria": "Меню",
+    "order": "Заказать",
+    "reviews": "Отзывы",
+    "telegram_aria": "V1nqx Production — Telegram",
+    "telegram_icon_alt": "Значок Telegram",
+    "works": "Мои работы"
+  },
+  "preloader": {
+    "aria_label": "Загрузка страницы",
+    "loading": "Загрузка"
+  },
+  "works": {
+    "filter": {
+      "all": "Все работы",
+      "commercial": "Коммерческие",
+      "speed": "Speed Ramp"
+    },
+    "filters_aria": "Фильтр работ",
+    "meta": {
+      "description": "Избранные проекты V1nqx (Тимур Аликулов): моушн-дизайн, speed ramp и коммерческие видео.",
+      "og_description": "Подборка динамичных видеомонтажей, speed ramp и премиальной моушн-графики.",
+      "og_title": "Мои работы — V1nqx Production",
+      "title": "Мои работы | V1nqx Production"
+    },
+    "next_aria": "Следующее видео",
+    "position_aria": "Положение видео",
+    "prev_aria": "Предыдущее видео",
+    "request": "Заказать индивидуальный монтаж",
+    "subtitle": "Подборка моих проектов: моушн-дизайн, speed ramp и коммерческий монтаж.",
+    "title": "Избранные работы"
+  }
+}

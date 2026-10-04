@@ -1,0 +1,85 @@
+{
+  "common": {
+    "logo_alt": "V1nqx Production Logo",
+    "scroll_top": "Scroll to top"
+  },
+  "contact": {
+    "description": "Have a project in mind, need dynamic video editing, or want to discuss a custom offer? Reach out directly via social channels or drop a message!",
+    "email_aria": "Email Direct",
+    "email_label": "Email Direct",
+    "title": "Let's Work Together"
+  },
+  "footer": {
+    "connect": "Connect",
+    "copyright": "© 2026 V1nqx Production. All rights reserved.",
+    "credit": "Designed & Developed by",
+    "description": "High-end motion graphics, speed ramp edits, and commercial video production tailored to make your content stand out.",
+    "navigation": "Navigation"
+  },
+  "form": {
+    "contact_label": "Telegram / Email / Phone",
+    "contact_placeholder": "@username or email",
+    "details_label": "Project Details",
+    "details_placeholder": "Tell me about your vision, deadlines, and video links...",
+    "name_label": "Name / Brand",
+    "name_placeholder": "John Doe",
+    "sending": "Sending...",
+    "service": {
+      "commercial": "Commercial Video",
+      "motion": "Motion Graphics",
+      "other": "Other / Custom",
+      "speed_ramp": "Speed Ramp Edit"
+    },
+    "service_label": "Service Type",
+    "status": {
+      "error": "Failed to send. Please contact directly via Telegram or Instagram.",
+      "required": "Please fill in all required fields.",
+      "success": "Message sent successfully! I will get back to you soon."
+    },
+    "submit": "Send Message",
+    "title": "Send a Message"
+  },
+  "lang": {
+    "switch_aria": "Language"
+  },
+  "nav": {
+    "about": "About",
+    "aria_label": "Main Navigation",
+    "contact": "Contact",
+    "home": "Home",
+    "home_aria": "V1nqx Home",
+    "instagram_aria": "V1nqx Production - Instagram Social",
+    "instagram_icon_alt": "Instagram Icon",
+    "logo_alt": "V1nqx Logo",
+    "menu_aria": "Menu",
+    "order": "Order now",
+    "reviews": "Reviews",
+    "telegram_aria": "V1nqx Production - Telegram Social",
+    "telegram_icon_alt": "Telegram Icon",
+    "works": "My Works"
+  },
+  "preloader": {
+    "aria_label": "Loading page",
+    "loading": "Loading"
+  },
+  "works": {
+    "filter": {
+      "all": "All Works",
+      "commercial": "Commercial",
+      "speed": "Speed Ramps"
+    },
+    "filters_aria": "Filter works",
+    "meta": {
+      "description": "Explore selected motion design, speed ramp, and commercial video projects by V1nqx (Timur Alikulov).",
+      "og_description": "A curated selection of dynamic video edits, speed ramps, and high-end motion graphics.",
+      "og_title": "My Works — V1nqx Production",
+      "title": "My Works | V1nqx Production"
+    },
+    "next_aria": "Next video",
+    "position_aria": "Video position",
+    "prev_aria": "Previous video",
+    "request": "Request custom edit",
+    "subtitle": "A curated selection of my motion design, speed ramp, and commercial project edits.",
+    "title": "Selected Works"
+  }
+}

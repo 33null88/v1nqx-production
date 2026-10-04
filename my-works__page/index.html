@@ -1,0 +1,844 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+
+    <!-- SEO Optimization Meta Tags -->
+    <title data-i18n="works.meta.title">My Works | V1nqx Production</title>
+    <meta
+      data-i18n-content="works.meta.description"
+      name="description"
+      content="Explore selected motion design, speed ramp, and commercial video projects by V1nqx (Timur Alikulov)."
+    />
+    <meta
+      name="keywords"
+      content="V1nqx Works, After Effects Portfolio, Speed Ramp Videos, Motion Design Uzbekistan, Commercial Video Editing"
+    />
+    <meta name="author" content="V1nqx Production" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Social Media Preview -->
+    <meta property="og:type" content="website" />
+    <meta
+      data-i18n-content="works.meta.og_title"
+      property="og:title"
+      content="My Works — V1nqx Production"
+    />
+    <meta
+      data-i18n-content="works.meta.og_description"
+      property="og:description"
+      content="A curated selection of dynamic video edits, speed ramps, and high-end motion graphics."
+    />
+    <meta property="og:image" content="../img/logo.jpg" />
+
+    <!-- Favicon / Logo -->
+    <link rel="icon" type="image/jpeg" href="../img/logo.jpg" />
+    <link rel="apple-touch-icon" href="../img/logo.jpg" />
+
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div
+      data-i18n-aria-label="preloader.aria_label"
+      class="preloader"
+      id="preloader"
+      aria-live="polite"
+      aria-label="Loading page"
+    >
+      <div class="preloader-content">
+        <div class="preloader-logo-wrap">
+          <img
+            data-i18n-alt="common.logo_alt"
+            src="../img/logo.jpg"
+            alt="V1nqx Production Logo"
+            class="preloader-content__img"
+          />
+        </div>
+        <div class="preloader-text">
+          <span data-i18n="preloader.loading" class="preloader-content__title"
+            >Loading</span
+          >
+          <span class="preloader-dots" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="header">
+      <nav
+        data-i18n-aria-label="nav.aria_label"
+        class="navbar"
+        aria-label="Main Navigation"
+      >
+        <div id="siteNav" class="left">
+          <ul>
+            <li>
+              <a data-i18n="nav.about" href="../index.html#portfolio">About</a>
+            </li>
+            <li>
+              <a data-i18n="nav.reviews" href="../index.html#reviews"
+                >Reviews</a
+              >
+            </li>
+            <li>
+              <a data-i18n="nav.works" href="./index.html" aria-current="page"
+                >My Works</a
+              >
+            </li>
+            <li>
+              <a data-i18n="nav.contact" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="center">
+          <a
+            data-i18n-aria-label="nav.home_aria"
+            href="../index.html"
+            aria-label="V1nqx Home"
+          >
+            <img
+              data-i18n-alt="nav.logo_alt"
+              src="../img/logo.jpg"
+              alt="V1nqx Logo"
+              class="center__img"
+            />
+          </a>
+          <ul>
+            <li>
+              <a
+                data-i18n="nav.order"
+                href="https://t.me/alikulovv003"
+                target="_blank"
+                class="order-btn"
+                >Order now</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="right">
+          <ul>
+            <li>
+              <div class="lang-switch" data-lang-switch>
+                <button
+                  type="button"
+                  class="lang-switch__trigger"
+                  aria-haspopup="listbox"
+                  aria-expanded="false"
+                  aria-label="Language"
+                  data-i18n-aria-label="lang.switch_aria"
+                >
+                  <svg
+                    class="lang-switch__globe"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path
+                      d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                    ></path>
+                  </svg>
+                  <span class="lang-switch__code">EN</span>
+                  <svg
+                    class="lang-switch__arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                <div
+                  class="lang-switch__menu"
+                  role="listbox"
+                  aria-label="Language"
+                  data-i18n-aria-label="lang.switch_aria"
+                >
+                  <button
+                    type="button"
+                    class="lang-switch__option is-active"
+                    role="option"
+                    aria-selected="true"
+                    data-set-lang="en"
+                    lang="en"
+                  >
+                    <span class="lang-switch__badge">EN</span>
+                    <span class="lang-switch__name">English</span>
+                    <svg
+                      class="lang-switch__check"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </button>
+                  <button
+                    type="button"
+                    class="lang-switch__option"
+                    role="option"
+                    aria-selected="false"
+                    data-set-lang="ru"
+                    lang="ru"
+                  >
+                    <span class="lang-switch__badge">RU</span>
+                    <span class="lang-switch__name">Русский</span>
+                    <svg
+                      class="lang-switch__check"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </button>
+                  <button
+                    type="button"
+                    class="lang-switch__option"
+                    role="option"
+                    aria-selected="false"
+                    data-set-lang="uz"
+                    lang="uz"
+                  >
+                    <span class="lang-switch__badge">UZ</span>
+                    <span class="lang-switch__name">Oʻzbekcha</span>
+                    <svg
+                      class="lang-switch__check"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li class="header-social">
+              <a
+                data-i18n-aria-label="nav.telegram_aria"
+                href="https://t.me/alikulovv003"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Telegram Profile"
+              >
+                <img
+                  data-i18n-alt="nav.telegram_icon_alt"
+                  src="../img/telegram-plane-svgrepo-com.svg"
+                  alt="Telegram Icon"
+                />
+              </a>
+            </li>
+            <li class="header-social">
+              <a
+                data-i18n-aria-label="nav.instagram_aria"
+                href="https://www.instagram.com/timurovich_003/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram Profile"
+              >
+                <img
+                  data-i18n-alt="nav.instagram_icon_alt"
+                  src="../img/instagram-logo-facebook-2-svgrepo-com.svg"
+                  alt="Instagram Icon"
+                />
+              </a>
+            </li>
+            <li class="nav-toggle-item">
+              <button
+                type="button"
+                class="nav-toggle"
+                id="navToggle"
+                aria-expanded="false"
+                aria-controls="siteNav"
+                aria-label="Menu"
+                data-i18n-aria-label="nav.menu_aria"
+              >
+                <span></span><span></span><span></span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="page-shell">
+      <section class="works" aria-labelledby="works-title">
+        <div class="works__header">
+          <h1 data-i18n="works.title" id="works-title">Selected Works</h1>
+          <p data-i18n="works.subtitle">
+            A curated selection of my motion design, speed ramp, and commercial
+            project edits.
+          </p>
+        </div>
+
+        <!-- Filter Chips -->
+        <div
+          data-i18n-aria-label="works.filters_aria"
+          class="works__filters"
+          role="group"
+          aria-label="Filter works"
+        >
+          <button
+            data-i18n="works.filter.all"
+            class="chip is-active"
+            type="button"
+            data-filter="all"
+            aria-pressed="true"
+          >
+            All Works
+          </button>
+          <button
+            data-i18n="works.filter.speed"
+            class="chip"
+            type="button"
+            data-filter="speed"
+            aria-pressed="false"
+          >
+            Speed Ramps
+          </button>
+          <button
+            data-i18n="works.filter.commercial"
+            class="chip"
+            type="button"
+            data-filter="commercial"
+            aria-pressed="false"
+          >
+            Commercial
+          </button>
+        </div>
+
+        <!-- 3D Carousel Stage -->
+        <div class="works__carousel">
+          <button
+            data-i18n-aria-label="works.prev_aria"
+            class="works__nav works__nav--prev"
+            type="button"
+            aria-label="Previous video"
+          >
+            ‹
+          </button>
+          <div class="works__stage" id="worksStage" aria-live="polite"></div>
+          <button
+            data-i18n-aria-label="works.next_aria"
+            class="works__nav works__nav--next"
+            type="button"
+            aria-label="Next video"
+          >
+            ›
+          </button>
+        </div>
+
+        <!-- Scrollbar / Progress -->
+        <div class="works__progress">
+          <div
+            data-i18n-aria-label="works.position_aria"
+            class="works__bar"
+            id="worksSlider"
+            role="slider"
+            tabindex="0"
+            aria-label="Video position"
+            aria-valuemin="1"
+          >
+            <span class="works__track"><i id="worksBar"></i></span>
+          </div>
+          <span class="works__count" id="worksCount" aria-hidden="true"></span>
+        </div>
+
+        <div class="works__footer">
+          <a data-i18n="works.request" href="#contact" class="works__link">
+            Request custom edit <span aria-hidden="true">↓</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section
+        class="contact-section"
+        id="contact"
+        aria-labelledby="contact-title"
+      >
+        <div class="contact-container">
+          <div class="contact-info">
+            <h2 data-i18n="contact.title" id="contact-title">
+              Let's Work Together
+            </h2>
+            <p data-i18n="contact.description" class="contact-description">
+              Have a project in mind, need dynamic video editing, or want to
+              discuss a custom offer? Reach out directly via social channels or
+              drop a message!
+            </p>
+
+            <div class="social-links">
+              <a
+                href="https://t.me/alikulovv003"
+                target="_blank"
+                rel="noreferrer"
+                class="social-card"
+              >
+                <div class="social-icon">
+                  <img
+                    src="../img/telegram-plane-svgrepo-com.svg"
+                    alt="Telegram"
+                  />
+                </div>
+                <div class="social-text">
+                  <span class="social-label">Telegram</span>
+                  <span class="social-value">@alikulovv003</span>
+                </div>
+              </a>
+
+              <a
+                href="https://www.instagram.com/timurovich_003/"
+                target="_blank"
+                rel="noreferrer"
+                class="social-card"
+              >
+                <div class="social-icon">
+                  <img
+                    src="../img/instagram-logo-facebook-2-svgrepo-com.svg"
+                    alt="Instagram"
+                  />
+                </div>
+                <div class="social-text">
+                  <span class="social-label">Instagram</span>
+                  <span class="social-value">@timurovich_003</span>
+                </div>
+              </a>
+
+              <a href="mailto:v1nqxxrxx28@gmail.com" class="social-card">
+                <div class="social-icon">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#ff1e42"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    ></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div class="social-text">
+                  <span data-i18n="contact.email_label" class="social-label"
+                    >Email Direct</span
+                  >
+                  <span class="social-value">v1nqxxrxx28@gmail.com</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-form-wrap">
+            <form id="contactForm" class="contact-form" novalidate>
+              <h3 data-i18n="form.title" class="form-title">Send a Message</h3>
+
+              <div class="form-group">
+                <label data-i18n="form.name_label" for="userName"
+                  >Name / Brand</label
+                >
+                <input
+                  data-i18n-placeholder="form.name_placeholder"
+                  type="text"
+                  id="userName"
+                  name="user_name"
+                  placeholder="John Doe"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label data-i18n="form.contact_label" for="userContact"
+                  >Telegram / Email / Phone</label
+                >
+                <input
+                  data-i18n-placeholder="form.contact_placeholder"
+                  type="text"
+                  id="userContact"
+                  name="user_contact"
+                  placeholder="@username or email"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label data-i18n="form.service_label" for="projectType"
+                  >Service Type</label
+                >
+                <!-- Кастомный select на div -->
+                <div class="custom-select-wrapper" id="customProjectType">
+                  <input
+                    type="hidden"
+                    name="project_type"
+                    id="projectType"
+                    value="Speed Ramp Edit"
+                  />
+                  <button
+                    type="button"
+                    class="custom-select-trigger"
+                    aria-haspopup="listbox"
+                    aria-expanded="false"
+                  >
+                    <span
+                      data-i18n="form.service.speed_ramp"
+                      class="selected-option"
+                      >Speed Ramp Edit</span
+                    >
+                    <span class="select-arrow">▼</span>
+                  </button>
+                  <div class="custom-options" role="listbox">
+                    <div
+                      data-i18n="form.service.speed_ramp"
+                      class="custom-option is-selected"
+                      data-value="Speed Ramp Edit"
+                      role="option"
+                    >
+                      Speed Ramp Edit
+                    </div>
+                    <div
+                      data-i18n="form.service.commercial"
+                      class="custom-option"
+                      data-value="Commercial Video"
+                      role="option"
+                    >
+                      Commercial Video
+                    </div>
+                    <div
+                      data-i18n="form.service.motion"
+                      class="custom-option"
+                      data-value="Motion Graphics"
+                      role="option"
+                    >
+                      Motion Graphics
+                    </div>
+                    <div
+                      data-i18n="form.service.other"
+                      class="custom-option"
+                      data-value="Other / Custom"
+                      role="option"
+                    >
+                      Other / Custom
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label data-i18n="form.details_label" for="userMessage"
+                  >Project Details</label
+                >
+                <textarea
+                  data-i18n-placeholder="form.details_placeholder"
+                  id="userMessage"
+                  name="message"
+                  rows="4"
+                  placeholder="Tell me about your vision, deadlines, and video links..."
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="submit-btn" id="submitBtn">
+                <span data-i18n="form.submit">Send Message</span>
+              </button>
+
+              <div class="form-status" id="formStatus" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- BIG FOOTER SECTION -->
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-brand">
+            <a
+              data-i18n-aria-label="nav.home_aria"
+              href="../index.html"
+              class="footer-logo-link"
+              aria-label="V1nqx Home"
+            >
+              <img
+                data-i18n-alt="common.logo_alt"
+                src="../img/logo.jpg"
+                alt="V1nqx Production Logo"
+                class="footer-logo-img"
+              />
+              <span class="footer-brand-name">V1NQX PRODUCTION</span>
+            </a>
+            <p data-i18n="footer.description" class="footer-brand-desc">
+              High-end motion graphics, speed ramp edits, and commercial video
+              production tailored to make your content stand out.
+            </p>
+          </div>
+
+          <div class="footer-nav">
+            <h4 data-i18n="footer.navigation" class="footer-title">
+              Navigation
+            </h4>
+            <ul class="footer-links">
+              <li><a data-i18n="nav.home" href="../index.html">Home</a></li>
+              <li>
+                <a data-i18n="nav.about" href="../index.html#portfolio"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a data-i18n="nav.reviews" href="../index.html#reviews"
+                  >Reviews</a
+                >
+              </li>
+              <li><a data-i18n="nav.works" href="./index.html">My Works</a></li>
+              <li><a data-i18n="nav.contact" href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-socials">
+            <h4 data-i18n="footer.connect" class="footer-title">Connect</h4>
+            <ul class="footer-social-list">
+              <li>
+                <a
+                  href="https://t.me/alikulovv003"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Telegram"
+                >
+                  <img
+                    src="../img/telegram-plane-svgrepo-com.svg"
+                    alt="Telegram"
+                  />
+                  <span>Telegram</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/timurovich_003/"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Instagram"
+                >
+                  <img
+                    src="../img/instagram-logo-facebook-2-svgrepo-com.svg"
+                    alt="Instagram"
+                  />
+                  <span>Instagram</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  data-i18n-aria-label="contact.email_aria"
+                  href="mailto:v1nqxxrxx28@gmail.com"
+                  aria-label="Email Direct"
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    ></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                  <span>Gmail</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-bottom-container">
+            <p data-i18n="footer.copyright">
+              © 2026 V1nqx Production. All rights reserved.
+            </p>
+            <div class="lang-switch lang-switch--up" data-lang-switch>
+              <button
+                type="button"
+                class="lang-switch__trigger"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+                aria-label="Language"
+                data-i18n-aria-label="lang.switch_aria"
+              >
+                <svg
+                  class="lang-switch__globe"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path
+                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                  ></path>
+                </svg>
+                <span class="lang-switch__code">EN</span>
+                <svg
+                  class="lang-switch__arrow"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <div
+                class="lang-switch__menu"
+                role="listbox"
+                aria-label="Language"
+                data-i18n-aria-label="lang.switch_aria"
+              >
+                <button
+                  type="button"
+                  class="lang-switch__option is-active"
+                  role="option"
+                  aria-selected="true"
+                  data-set-lang="en"
+                  lang="en"
+                >
+                  <span class="lang-switch__badge">EN</span>
+                  <span class="lang-switch__name">English</span>
+                  <svg
+                    class="lang-switch__check"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  class="lang-switch__option"
+                  role="option"
+                  aria-selected="false"
+                  data-set-lang="ru"
+                  lang="ru"
+                >
+                  <span class="lang-switch__badge">RU</span>
+                  <span class="lang-switch__name">Русский</span>
+                  <svg
+                    class="lang-switch__check"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  class="lang-switch__option"
+                  role="option"
+                  aria-selected="false"
+                  data-set-lang="uz"
+                  lang="uz"
+                >
+                  <span class="lang-switch__badge">UZ</span>
+                  <span class="lang-switch__name">Oʻzbekcha</span>
+                  <svg
+                    class="lang-switch__check"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <p data-i18n="footer.credit" class="footer-credit">
+              Designed & Developed by
+              <span
+                ><a href="https://t.me/null_css" target="_blank"
+                  >38Null83</a
+                ></span
+              >
+            </p>
+          </div>
+        </div>
+      </footer>
+
+      <button
+        data-i18n-aria-label="common.scroll_top"
+        id="top"
+        class="top-button"
+        aria-label="Scroll to top"
+      >
+        ↑
+      </button>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/i18next@23.5.0/i18next.min.js"></script>
+    <script src="./scripts/i18n-setup.js"></script>
+    <script src="./scripts/apply-translations.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
