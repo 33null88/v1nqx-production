@@ -48,14 +48,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ---------- Video Data ---------- */
   const works = [
-    { file: "mers-sharq.mp4", category: "commercial" },
-    { file: "Rolls Royce.mp4", category: "commercial" },
-    { file: "Akmal Porsche911.mp4", category: "speed" },
-    { file: "W211 Major.mp4", category: "commercial" },
-    { file: "mers.mp4", category: "speed" },
-    { file: "Motofest.mp4", category: "speed" },
-    { file: "484 Final.mp4", category: "commercial" },
+    { file: "Porsche Lovely final_prob3.mp4", category: "commercial" },
+    { file: "484 Final.mp4", category: "speed" },
+    { file: "Rolls Royce Edit_prob3.mp4", category: "commercial" },
     { file: "BYD 003.mp4", category: "speed" },
+    { file: "Mercedes Maybach_prob3.mp4", category: "commercial" },
+    { file: "Akmal Porsche911.mp4", category: "commercial" },
+    { file: "Mersedes Benz Edit(1).mp4", category: "speed" },
   ];
 
   if (!stage) return;

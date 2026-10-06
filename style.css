@@ -52,6 +52,7 @@ body {
   min-height: 100%;
   color: var(--text-main);
   background: var(--bg-dark);
+  scroll-behavior: smooth;
 }
 
 /* Scrollbar Style */
@@ -269,11 +270,11 @@ main {
   transition:
     opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
     transform 0.8s ease;
-  filter: blur(10px);
+  filter: blur(20px);
 }
 
 .bg-video.is-active {
-  opacity: 0.5;
+  opacity: 0.3;
   transform: translate(-50%, -50%) scale(1.03);
 }
 

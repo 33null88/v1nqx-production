@@ -37,6 +37,7 @@ body {
   min-height: 100%;
   color: #fff;
   background: #080204;
+  scroll-behavior: smooth;
 }
 
 body {
