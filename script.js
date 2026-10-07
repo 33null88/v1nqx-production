@@ -68,6 +68,17 @@ document.addEventListener("DOMContentLoaded", () => {
     video.preload = "auto";
     video.src = src;
     video.load();
+    // Диагностика: если файл не найден (404) или формат не поддерживается
+    // (например, H.265), пишем причину в консоль и берём первое видео вместо него
+    video.addEventListener("error", () => {
+      video.dataset.failed = "1";
+      const code = video.error ? video.error.code : "?";
+      console.warn(
+        `[bg-video] не загрузилось: ${video.dataset.src} (код ${code}: ` +
+          `${code === 4 ? "файл не найден или формат не поддерживается" : code === 3 ? "ошибка декодирования" : code === 2 ? "сетевая ошибка" : "прервано"})`,
+      );
+      setActiveVideo(requestedVideo);
+    });
     // Повторяем play(), как только браузер реально получил данные
     video.addEventListener("loadeddata", () => tryPlay(video), { once: true });
     video.addEventListener(
@@ -90,9 +101,20 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(done, timeout);
     });
 
+  // Режим «один фон»: на телефонах грузим только первое видео и используем
+  // его во всех секциях — это в 3 раза меньше трафика и нагрузки на GPU.
+  // Чтобы на телефонах тоже были 3 видео — поставьте false.
+  const SINGLE_VIDEO_ON_MOBILE = true;
+  const reducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+  const singleVideoMode =
+    SINGLE_VIDEO_ON_MOBILE && window.matchMedia("(max-width: 768px)").matches;
+
   const startBgVideos = async () => {
-    if (saveBandwidth) return; // экономия трафика: фон не грузим
+    if (saveBandwidth || reducedMotion) return; // экономия: фон не грузим
     loadBgVideo(video1);
+    if (singleVideoMode) return;
     await whenReady(video1);
     for (const vid of [video2, videoContact]) {
       loadBgVideo(vid);
@@ -146,8 +168,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Пока фон скрыт (is-dimmed над 3D-блоком) — не тратим ресурсы на видео
+  const syncBgPlayback = () => {
+    const active = bgVideos.find((v) => v.classList.contains("is-active"));
+    if (globalVideoBg?.classList.contains("is-dimmed")) {
+      active?.pause();
+    } else {
+      tryPlay(active);
+    }
+  };
+
   // Helper: Set active background video
-  const setActiveVideo = (activeVideo) => {
+  let requestedVideo = video1;
+  const setActiveVideo = (wanted) => {
+    requestedVideo = wanted;
+    // Режим «один фон» или видео не загрузилось -> показываем первое видео
+    const activeVideo =
+      singleVideoMode || (wanted && wanted.dataset.failed) ? video1 : wanted;
     bgVideos.forEach((vid) => {
       const on = vid === activeVideo;
       vid.classList.toggle("is-active", on);
@@ -196,6 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
           if (entry.isIntersecting) {
             globalVideoBg?.classList.remove("is-dimmed");
             setActiveVideo(videoContact);
+            syncBgPlayback();
           } else {
             setActiveVideo(currentActiveVideo);
           }
@@ -223,6 +261,7 @@ document.addEventListener("DOMContentLoaded", () => {
           } else {
             globalVideoBg.classList.remove("is-dimmed");
           }
+          syncBgPlayback();
         });
       },
       { threshold: 0.05 },
