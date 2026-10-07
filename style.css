@@ -52,7 +52,6 @@ body {
   min-height: 100%;
   color: var(--text-main);
   background: var(--bg-dark);
-  scroll-behavior: smooth;
 }
 
 /* Scrollbar Style */
@@ -526,7 +525,7 @@ main {
   line-height: 0.8;
   letter-spacing: -0.08em;
   background: linear-gradient(135deg, #ffffff 20%, var(--accent-red) 100%);
-  background-clip: none;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.8));
@@ -1349,113 +1348,6 @@ main {
 }
 
 @media (max-width: 860px) {
-  .header {
-    padding: 16px 20px;
-  }
-
-  .navbar {
-    grid-template-columns: auto 1fr;
-  }
-
-  .left {
-    display: none;
-  }
-
-  .card-top-left,
-  .card-center-right,
-  .card-bottom-left {
-    align-self: stretch;
-    margin: 0;
-    max-width: 100%;
-  }
-
-  .review-3d-card {
-    width: 90vw;
-    margin-left: -45vw !important;
-  }
-
-  .footer-container {
-    grid-template-columns: 1fr;
-    gap: 36px;
-  }
-
-  .footer-bottom-container {
-    flex-direction: column;
-    gap: 12px;
-    text-align: center;
-  }
-}
-
-@media (max-width: 640px) {
-  .contact-form-wrap {
-    padding: 24px;
-  }
-}
-
-/* ==========================================================
-   MOBILE: header menu, safe areas, touch sizing
-   ========================================================== */
-html {
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-}
-
-.nav-toggle-item {
-  display: none;
-}
-
-.nav-toggle {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  width: 44px;
-  height: 44px;
-  padding: 0;
-  border-radius: 50%;
-  background: rgba(255, 30, 66, 0.05);
-  border: 1px solid var(--border-red);
-  cursor: pointer;
-  outline: none;
-  -webkit-tap-highlight-color: transparent;
-  transition: all 0.3s ease;
-}
-
-.nav-toggle span {
-  display: block;
-  width: 18px;
-  height: 2px;
-  border-radius: 2px;
-  background: #fff;
-  transition:
-    transform 0.3s ease,
-    opacity 0.3s ease;
-}
-
-.nav-toggle:focus-visible {
-  border-color: var(--accent-red);
-  box-shadow: 0 0 20px var(--glow-red);
-}
-
-.header.is-menu-open .nav-toggle {
-  background: rgba(255, 30, 66, 0.15);
-  border-color: var(--accent-red);
-}
-
-.header.is-menu-open .nav-toggle span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-
-.header.is-menu-open .nav-toggle span:nth-child(2) {
-  opacity: 0;
-}
-
-.header.is-menu-open .nav-toggle span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
-}
-
-@media (max-width: 860px) {
   :root {
     --backdrop-blur: blur(10px);
   }
@@ -1499,7 +1391,6 @@ html {
     display: flex;
   }
 
-  /* Left links become a dropdown panel under the header */
   .left {
     display: flex;
     position: absolute;
@@ -1548,11 +1439,30 @@ html {
     font-size: 14px;
   }
 
-  .left a[aria-current="page"] {
-    text-underline-offset: 6px;
+  .card-top-left,
+  .card-center-right,
+  .card-bottom-left {
+    align-self: stretch;
+    margin: 0;
+    max-width: 100%;
   }
 
-  /* Sections shared by both pages */
+  .review-3d-card {
+    width: 90vw;
+    margin-left: -45vw !important;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .footer-bottom-container {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
   .contact-section {
     padding: 80px 20px 60px;
   }
@@ -1620,94 +1530,9 @@ html {
     overflow-wrap: anywhere;
   }
 
-  /* 16px prevents the automatic zoom on focus in iOS Safari */
   .form-group input,
   .form-group textarea,
   .custom-select-trigger {
     font-size: 16px;
-  }
-}
-
-/* No "sticky" hover lifts on touch screens */
-@media (hover: none) {
-  .asym-card:hover,
-  .social-card:hover,
-  .right a:hover,
-  .top-button:hover,
-  .works__nav:hover {
-    transform: none;
-  }
-
-  .works__nav:hover {
-    transform: translateY(-50%);
-  }
-}
-
-/* ---------- Main page: mobile layout ---------- */
-@media (max-width: 860px) {
-  .hero {
-    padding: 140px 20px 90px;
-  }
-
-  .hero-content {
-    max-width: 100%;
-  }
-
-  .portfolio {
-    padding: 90px 20px 100px;
-  }
-
-  .portfolio-header {
-    margin-bottom: 36px;
-  }
-
-  .portfolio-grid {
-    gap: 24px;
-  }
-
-  .asym-card {
-    width: 100%;
-    padding: 22px 20px;
-    gap: 18px;
-  }
-
-  .asym-card__info {
-    min-width: 0;
-  }
-
-  .achievements-header {
-    top: 7%;
-    width: 100%;
-    padding: 0 20px;
-  }
-
-  .card-inner {
-    padding: 26px 22px;
-  }
-}
-
-@media (max-width: 520px) {
-  .hero-content__title {
-    letter-spacing: 0.04em;
-    overflow-wrap: anywhere;
-  }
-
-  .portfolio-content__title {
-    font-size: clamp(2.4rem, 12vw, 3.2rem);
-    overflow-wrap: anywhere;
-  }
-
-  .giant-num {
-    font-size: clamp(3.2rem, 15vw, 4.4rem);
-  }
-
-  .section-title {
-    font-size: clamp(2rem, 10vw, 2.6rem);
-  }
-
-  .review-text {
-    font-size: 0.98rem;
-    line-height: 1.5;
-    margin-bottom: 18px;
   }
 }

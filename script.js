@@ -38,23 +38,86 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("load", scheduleHidePreloader);
   }
 
-  // 2. Safe Video Autoplay
-  const startVideo = (videoElement) => {
-    if (!videoElement) return;
-    videoElement.play().catch(() => {
-      document.addEventListener(
-        "click",
-        () => {
-          videoElement.play();
-        },
-        { once: true },
-      );
-    });
+  // 2. Smart Background Video Loading
+  // Видео грузятся по очереди, а не все сразу:
+  //   1) первое — после загрузки страницы (не тормозит прелоадер)
+  //   2) остальные — по очереди, когда предыдущее готово
+  // Если нужное видео ещё не загружено, оно грузится приоритетно (см. setActiveVideo).
+  const bgVideos = [video1, video2, videoContact].filter(Boolean);
+
+  const connection =
+    navigator.connection ||
+    navigator.mozConnection ||
+    navigator.webkitConnection;
+  const saveBandwidth = Boolean(
+    connection &&
+    (connection.saveData || /(^|-)2g$/.test(connection.effectiveType || "")),
+  );
+
+  const tryPlay = (video) => {
+    if (!video || !video.getAttribute("src")) return;
+    const p = video.play();
+    if (p && typeof p.catch === "function") p.catch(() => {});
   };
 
-  startVideo(video1);
-  startVideo(video2);
-  startVideo(videoContact);
+  const loadBgVideo = (video) => {
+    if (!video || saveBandwidth || video.dataset.loading) return;
+    const src = video.dataset.src;
+    if (!src) return;
+    video.dataset.loading = "1";
+    video.preload = "auto";
+    video.src = src;
+    video.load();
+    // Повторяем play(), как только браузер реально получил данные
+    video.addEventListener("loadeddata", () => tryPlay(video), { once: true });
+    video.addEventListener(
+      "canplay",
+      () => {
+        if (video.classList.contains("is-active")) tryPlay(video);
+      },
+      { once: true },
+    );
+    tryPlay(video);
+  };
+
+  // Ждём, пока видео будет готово к воспроизведению (или истечёт таймаут)
+  const whenReady = (video, timeout = 8000) =>
+    new Promise((resolve) => {
+      if (!video || video.readyState >= 3) return resolve();
+      const done = () => resolve();
+      video.addEventListener("canplaythrough", done, { once: true });
+      video.addEventListener("error", done, { once: true });
+      setTimeout(done, timeout);
+    });
+
+  const startBgVideos = async () => {
+    if (saveBandwidth) return; // экономия трафика: фон не грузим
+    loadBgVideo(video1);
+    await whenReady(video1);
+    for (const vid of [video2, videoContact]) {
+      loadBgVideo(vid);
+      await whenReady(vid);
+    }
+  };
+
+  if (document.readyState === "complete") {
+    startBgVideos();
+  } else {
+    window.addEventListener("load", startBgVideos, { once: true });
+  }
+
+  // Если браузер заблокировал автозапуск — запускаем при первом касании/клике
+  const resumeActiveVideo = () =>
+    tryPlay(bgVideos.find((v) => v.classList.contains("is-active")));
+  ["pointerdown", "touchstart", "keydown", "scroll"].forEach((evt) =>
+    window.addEventListener(evt, resumeActiveVideo, {
+      once: true,
+      passive: true,
+    }),
+  );
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) resumeActiveVideo();
+  });
 
   // 3. UI Scroll Actions (Header & Top Button)
   const handleScrollUI = () => {
@@ -85,9 +148,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Helper: Set active background video
   const setActiveVideo = (activeVideo) => {
-    [video1, video2, videoContact].forEach((vid) => {
-      if (vid) {
-        vid.classList.toggle("is-active", vid === activeVideo);
+    bgVideos.forEach((vid) => {
+      const on = vid === activeVideo;
+      vid.classList.toggle("is-active", on);
+      if (on) {
+        loadBgVideo(vid); // нужное видео грузим сразу, не дожидаясь очереди
+        tryPlay(vid);
+      } else {
+        // Останавливаем после затухания, чтобы не грузить процессор
+        setTimeout(() => {
+          if (!vid.classList.contains("is-active")) vid.pause();
+        }, 900);
       }
     });
   };

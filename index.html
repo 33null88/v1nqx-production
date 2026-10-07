@@ -43,7 +43,6 @@
       data-i18n-content="meta.og_description"
       content="High-end motion graphics, cinematic editing, and dynamic speed ramping by V1nqx (Timur Alikulov)."
     />
-    <!-- Absolute Path to Image -->
     <meta
       property="og:image"
       content="https://33null88.github.io/v1nqx-production/img/logo.jpg"
@@ -142,35 +141,37 @@
       id="global-video-bg"
       aria-hidden="true"
     >
+      <!-- src не задан намеренно: script.js подгружает видео по очереди (data-src) -->
       <video
-        autoplay
         muted
         loop
         playsinline
+        preload="none"
+        disablepictureinpicture
         id="bg-video-1"
         class="bg-video is-active"
-      >
-        <source
-          src="./img/videos/Porsche Lovely final_prob3.mp4"
-          type="video/mp4"
-        />
-      </video>
-      <video autoplay muted loop playsinline id="bg-video-2" class="bg-video">
-        <source src="./img/videos/484 Final.mp4" type="video/mp4" />
-      </video>
+        data-src="./img/videos/Porsche Lovely final_prob3.mp4"
+      ></video>
       <video
-        autoplay
         muted
         loop
         playsinline
+        preload="none"
+        disablepictureinpicture
+        id="bg-video-2"
+        class="bg-video"
+        data-src="./img/videos/484 Final.mp4"
+      ></video>
+      <video
+        muted
+        loop
+        playsinline
+        preload="none"
+        disablepictureinpicture
         id="bg-video-contact"
         class="bg-video"
-      >
-        <source
-          src="./img/videos/Rolls Royce Edit_prob3.mp4"
-          type="video/mp4"
-        />
-      </video>
+        data-src="./img/videos/Rolls Royce Edit_prob3.mp4"
+      ></video>
     </div>
 
     <!-- Main Content -->
@@ -364,19 +365,6 @@
                     data-i18n-alt="nav.instagram_icon_alt"
                   />
                 </a>
-              </li>
-              <li class="nav-toggle-item">
-                <button
-                  type="button"
-                  class="nav-toggle"
-                  id="navToggle"
-                  aria-expanded="false"
-                  aria-controls="siteNav"
-                  aria-label="Menu"
-                  data-i18n-aria-label="nav.menu_aria"
-                >
-                  <span></span><span></span><span></span>
-                </button>
               </li>
             </ul>
           </div>
@@ -693,7 +681,7 @@
               </div>
 
               <div class="form-group">
-                <label for="projectType" data-i18n="form.service_label"
+                <label for="projectTypeInput" data-i18n="form.service_label"
                   >Service Type</label
                 >
                 <!-- Кастомный select на div -->
@@ -701,7 +689,7 @@
                   <input
                     type="hidden"
                     name="project_type"
-                    id="projectType"
+                    id="projectTypeInput"
                     value="Speed Ramp Edit"
                   />
                   <button
@@ -905,7 +893,7 @@
                   <circle cx="12" cy="12" r="10"></circle>
                   <line x1="2" y1="12" x2="22" y2="12"></line>
                   <path
-                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z"
                   ></path>
                 </svg>
                 <span class="lang-switch__code">EN</span>
@@ -946,7 +934,6 @@
                     stroke-width="3"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    aria-hidden="true"
                   >
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
@@ -969,7 +956,6 @@
                     stroke-width="3"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    aria-hidden="true"
                   >
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
@@ -992,7 +978,6 @@
                     stroke-width="3"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    aria-hidden="true"
                   >
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
@@ -1021,7 +1006,7 @@
       ↑
     </button>
 
-    <!-- i18n: библиотека, инициализация, применение переводов (порядок важен) -->
+    <!-- i18n -->
     <script src="https://cdn.jsdelivr.net/npm/i18next@23.5.0/i18next.min.js"></script>
     <script src="./scripts/i18n-setup.js"></script>
     <script src="./scripts/apply-translations.js"></script>

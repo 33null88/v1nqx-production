@@ -16,8 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
     preloader.classList.add("is-hidden");
   };
 
-  // Ждём применения переводов (i18n), чтобы не показать вспышку английского текста.
-  // Страховочный лимит — 3 с.
   const waitForI18n = () =>
     Promise.race([
       window.i18nReady || Promise.resolve(),
@@ -47,14 +45,40 @@ document.addEventListener("DOMContentLoaded", () => {
   handleScroll();
 
   /* ---------- Video Data ---------- */
+  // Папки (пути относительно страницы My Works)
+  const VIDEO_DIR = "../img/videos/"; // сами видео
+  const PREVIEW_DIR = "../img/previews/"; // фото-превью (лежат в корне проекта)
+
+  // poster — имя файла превью. Нет превью? Просто удалите поле poster
+  // (или оставьте poster: "") — тогда будет первый кадр видео.
   const works = [
-    { file: "Porsche Lovely final_prob3.mp4", category: "commercial" },
-    { file: "484 Final.mp4", category: "speed" },
-    { file: "Rolls Royce Edit_prob3.mp4", category: "commercial" },
-    { file: "BYD 003.mp4", category: "speed" },
-    { file: "Mercedes Maybach_prob3.mp4", category: "commercial" },
-    { file: "Akmal Porsche911.mp4", category: "commercial" },
-    { file: "Mersedes Benz Edit(1).mp4", category: "speed" },
+    {
+      file: "Porsche Lovely final_prob3.mp4",
+      category: "commercial",
+      poster: "",
+    },
+    { file: "484 Final.mp4", category: "speed", poster: "484.jpg" },
+    {
+      file: "Rolls Royce Edit_prob3.mp4",
+      category: "commercial",
+      poster: "rolls-royce.jpg",
+    },
+    { file: "BYD 003.mp4", category: "speed", poster: "byd-003.jpg" },
+    {
+      file: "Mercedes Maybach_prob3.mp4",
+      category: "commercial",
+      poster: "maybach.jpg",
+    },
+    {
+      file: "Akmal Porsche911.mp4",
+      category: "commercial",
+      poster: "porsche-911.jpg",
+    },
+    {
+      file: "Mersedes Benz Edit(1).mp4",
+      category: "speed",
+      poster: "mercedes-benz.jpg",
+    },
   ];
 
   if (!stage) return;
@@ -63,6 +87,28 @@ document.addEventListener("DOMContentLoaded", () => {
   let total = 0;
   let current = 0;
   let moved = false;
+
+  /* ---------- Video tag (с превью или без) ---------- */
+  // Видео НЕ получает src при создании карточки — оно подгружается
+  // только когда карточка становится активной (см. loadVideo в render).
+  const videoTag = (w) => {
+    const src = encodeURI(`${VIDEO_DIR}${w.file}`);
+    // Без превью берём первый кадр видео (#t=0.1), но тоже только после выбора
+    const url = w.poster ? src : `${src}#t=0.1`;
+    const poster = w.poster
+      ? ` poster="${encodeURI(`${PREVIEW_DIR}${w.poster}`)}"`
+      : "";
+    return `<video data-src="${url}"${poster} playsinline preload="none"></video>`;
+  };
+
+  const loadVideo = (video) => {
+    if (!video || video.getAttribute("src")) return;
+    const url = video.dataset.src;
+    if (!url) return;
+    video.preload = "metadata";
+    video.src = url;
+    video.load();
+  };
 
   /* ---------- Build Cards for Filter ---------- */
   const build = (filter) => {
@@ -74,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .map(
         (w, i) => `
           <article class="card" data-index="${i}">
-            <video src="${encodeURI(`../img/videos/${w.file}`)}#t=0.1" playsinline preload="metadata"></video>
+            ${videoTag(w)}
             <span class="card__play" aria-hidden="true"></span>
           </article>`,
       )
@@ -123,7 +169,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (video) {
         video.controls = active;
-        if (!active) video.pause();
+        if (active) loadVideo(video);
+        else video.pause();
       }
     });
 
@@ -249,22 +296,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   build("all");
 
-  /* 7. Contact Form Handling */
+  /* ---------- Contact Form Handling ---------- */
   const WORKER_URL = "https://v1nqx-contact.alikulovabdullo83.workers.dev/";
 
   const contactForm = document.getElementById("contactForm");
   const formStatus = document.getElementById("formStatus");
   const submitBtn = document.getElementById("submitBtn");
 
-  // Перевод строки из JS: window.translate определён в apply-translations.js.
-  // Если i18n недоступен — используется английский fallback.
   const tr = (key, fallback) =>
     typeof window.translate === "function"
       ? window.translate(key, fallback)
       : fallback;
 
-  // Статус хранится по ключу (data-i18n), поэтому при смене языка
-  // уже показанное сообщение тоже переводится.
   const showStatus = (key, type, fallback = "") => {
     if (!formStatus) return;
     if (key) {
@@ -325,30 +368,29 @@ document.addEventListener("DOMContentLoaded", () => {
       const result = await response.json();
 
       if (!response.ok) {
-        throw new Error(result.error || "Failed to send");
+        throw new Error(result.error || "Sending failed");
       }
 
       showStatus(
         "form.status.success",
         "success",
-        "Message sent successfully! I will get back to you soon.",
+        "Message sent successfully! I'll get back to you shortly.",
       );
       contactForm.reset();
-      // reset() вернёт скрытое поле к значению по умолчанию — синхронизируем и подпись селекта
       document.querySelector("#customProjectType .custom-option")?.click();
     } catch (error) {
       console.error("Form submit error:", error);
       showStatus(
         "form.status.error",
         "error",
-        "Failed to send. Please contact directly via Telegram or Instagram.",
+        "Failed to send. Please reach out directly on Telegram or Instagram.",
       );
     } finally {
       setLoading(false);
     }
   });
 
-  // 8. Custom Select Dropdown Logic
+  /* ---------- Custom Select Dropdown Logic ---------- */
   const customSelect = document.getElementById("customProjectType");
 
   if (customSelect) {
@@ -357,12 +399,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const hiddenInput = customSelect.querySelector("input[type='hidden']");
     const selectedText = customSelect.querySelector(".selected-option");
 
-    // Toggle dropdown
     trigger.addEventListener("click", (e) => {
       e.stopPropagation();
       const isOpen = customSelect.classList.contains("is-open");
 
-      // Close all other custom selects if present
       document
         .querySelectorAll(".custom-select-wrapper.is-open")
         .forEach((el) => {
@@ -379,14 +419,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Option selection
     options.forEach((option) => {
       option.addEventListener("click", () => {
         const value = option.getAttribute("data-value");
         const text = option.textContent.trim();
 
-        // В форму уходит исходное (английское) значение data-value,
-        // а на экране показывается переведённый текст пункта.
         hiddenInput.value = value;
         selectedText.textContent = text;
         const i18nKey = option.getAttribute("data-i18n");
@@ -400,7 +437,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // Close on click outside
     document.addEventListener("click", (e) => {
       if (!customSelect.contains(e.target)) {
         customSelect.classList.remove("is-open");
@@ -408,7 +444,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Close on Escape key
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && customSelect.classList.contains("is-open")) {
         customSelect.classList.remove("is-open");
@@ -417,7 +452,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 9. Language Switcher (header + footer)
+  /* ---------- Language Switcher ---------- */
   const langSwitches = document.querySelectorAll("[data-lang-switch]");
 
   const closeLangSwitch = (sw) => {
@@ -443,8 +478,6 @@ document.addEventListener("DOMContentLoaded", () => {
     return String(raw).toLowerCase().split(/[-_]/)[0];
   };
 
-  // Показывает текущий язык на кнопке и подсвечивает активный пункт.
-  // Переключение самого языка выполняет i18n-setup.js по атрибуту data-set-lang.
   const syncLangSwitches = () => {
     const current = getCurrentLang();
     langSwitches.forEach((sw) => {
@@ -466,7 +499,6 @@ document.addEventListener("DOMContentLoaded", () => {
       e.stopPropagation();
       const willOpen = !sw.classList.contains("is-open");
       closeAllLangSwitches(sw);
-      // Закрываем и выпадающий список формы, чтобы меню не накладывались
       document
         .querySelectorAll(".custom-select-wrapper.is-open")
         .forEach((el) => el.classList.remove("is-open"));
@@ -500,7 +532,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Шапка скрывается при прокрутке — вместе с ней закрываем её меню языка
   window.addEventListener(
     "scroll",
     () => {
@@ -518,7 +549,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.i18nReady?.then(syncLangSwitches);
   syncLangSwitches();
 
-  // 10. Mobile Navigation Menu
+  /* ---------- Mobile Navigation Menu ---------- */
   const navToggle = document.getElementById("navToggle");
 
   const setMenu = (open) => {
@@ -557,7 +588,6 @@ document.addEventListener("DOMContentLoaded", () => {
     { passive: true },
   );
 
-  // Меню языка и мобильное меню не должны быть открыты одновременно
   langSwitches.forEach((sw) => {
     sw.querySelector(".lang-switch__trigger")?.addEventListener("click", () =>
       setMenu(false),
