@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       file: "Mersedes Benz Edit(1).mp4",
       category: "speed",
-      poster: "mercedes-benz.jpg",
+      poster: "mersedes-benz.jpg",
     },
   ];
 

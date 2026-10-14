@@ -25,7 +25,7 @@
   "use strict";
 
   var SUPPORTED_LANGS = ["en", "ru", "uz"];
-  var DEFAULT_LANG = "en";
+  var DEFAULT_LANG = "ru";
   var STORAGE_KEY = "preferred-language";
 
   // document.currentScript доступен только во время синхронного выполнения скрипта,
@@ -179,7 +179,7 @@
   function init() {
     if (typeof window.i18next === "undefined") {
       console.error(
-        "[i18n] Библиотека i18next не загружена. Сайт останется на английском.",
+        "[i18n] Библиотека i18next не загружена. Сайт останется на русском.",
       );
       resolveReady();
       return Promise.resolve();
