@@ -12,7 +12,7 @@
  *   1. Язык, выбранный пользователем вручную (localStorage)
  *   2. navigator.languages / navigator.language — первый поддерживаемый
  *      (региональные коды en-US, ru-RU, uz-Latn-UZ приводятся к en / ru / uz)
- *   3. en (fallback)
+ *   3. ru (fallback)
  *
  * Публичный API (window):
  *   switchLanguage(lang)  — сменить язык без перезагрузки ('en' | 'ru' | 'uz')
@@ -56,6 +56,10 @@
   function readStoredLanguage() {
     try {
       var stored = window.localStorage.getItem(STORAGE_KEY);
+      if (stored === "en") {
+        window.localStorage.setItem(STORAGE_KEY, DEFAULT_LANG);
+        return DEFAULT_LANG;
+      }
       return SUPPORTED_LANGS.indexOf(stored) !== -1 ? stored : null;
     } catch (e) {
       return null; // localStorage может быть недоступен (приватный режим и т.п.)
@@ -74,15 +78,8 @@
     var stored = readStoredLanguage();
     if (stored) return stored;
 
-    var preferred =
-      Array.isArray(navigator.languages) && navigator.languages.length
-        ? navigator.languages
-        : [navigator.language || navigator.userLanguage];
-
-    for (var i = 0; i < preferred.length; i++) {
-      var lang = baseLang(preferred[i]);
-      if (SUPPORTED_LANGS.indexOf(lang) !== -1) return lang;
-    }
+    // Сайт сделан на русском языке по умолчанию, поэтому не используем браузерный
+    // язык как основной приоритет, если явно не выбрана другая локаль.
     return DEFAULT_LANG;
   }
 
@@ -160,6 +157,8 @@
         return;
       return window.i18next.changeLanguage(target).then(function () {
         storeLanguage(target);
+        document.documentElement.lang = target;
+        document.documentElement.setAttribute("lang", target);
         if (typeof window.applyTranslations === "function")
           window.applyTranslations();
         updateSwitchers();
@@ -205,6 +204,14 @@
           returnNull: false,
           interpolation: { escapeValue: false }, // текст вставляется через textContent
         });
+      })
+      .then(function () {
+        document.documentElement.lang = window.i18next.resolvedLanguage || lang;
+        document.documentElement.setAttribute(
+          "lang",
+          window.i18next.resolvedLanguage || lang,
+        );
+        return window.i18next;
       })
       .then(domReady) // гарантирует, что apply-translations.js уже выполнен
       .then(function () {

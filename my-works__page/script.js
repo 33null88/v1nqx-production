@@ -474,7 +474,7 @@ document.addEventListener("DOMContentLoaded", () => {
       window.i18next?.resolvedLanguage ||
       window.i18next?.language ||
       document.documentElement.lang ||
-      "en";
+      "ru";
     return String(raw).toLowerCase().split(/[-_]/)[0];
   };
 
