@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       file: "Porsche Lovely final_prob3.mp4",
       category: "commercial",
-      poster: "",
+      poster: "porsche-lovely.jpg",
     },
     { file: "484 Final.mp4", category: "speed", poster: "484.jpg" },
     {
