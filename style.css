@@ -1536,3 +1536,28 @@ main {
     font-size: 16px;
   }
 }
+
+@media (max-width: 375px) {
+  .hero {
+    padding: 140px 16px 100px;
+  }
+
+  .hero-content__title {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+  }
+
+  .hero-content__description {
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+  }
+  .review-3d-card {
+    width: 95vw;
+    margin-left: -47.5vw !important;
+  }
+  .review-3d-card:nth-child(1) {
+    margin-left: -45vw;
+  }
+  .scene-3d {
+    transform: scale(1.05);
+    
+  }
+}
